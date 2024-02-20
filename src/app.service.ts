@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { NounsTokenFactory } from '@nouns/contracts';
 
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World!';
+    const nounsToken = new NounsTokenFactory();
+    return 'Nouns Token Bytecode:' + nounsToken.bytecode;
   }
 }
